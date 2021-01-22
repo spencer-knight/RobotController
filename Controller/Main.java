@@ -8,7 +8,7 @@ import java.io.DataOutputStream;
 class Main {
   public static void main(String[] args) {
   
-	  try{ 
+	  /*try{ 
 
           byte[] testData = { 0x00, 0x03};
 		  Socket s = new Socket("127.0.0.1", 4040);
@@ -23,6 +23,13 @@ class Main {
 	  catch( Exception e) {
 
 		  System.out.println( e);
+	  }
+
+	  */
+	  ControlPanel cp = new ControlPanel();
+	  while(true) {
+
+		//Do robot stuff
 	  }
   }
 }
