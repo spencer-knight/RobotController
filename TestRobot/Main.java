@@ -21,6 +21,10 @@ class Main {
 			rp.setBytes(data);
 			System.out.println("Length: " + rp.getLength());
 			System.out.println("Type: " + rp.getType());
+			for(int i = 0; i < rp.getLength(); i++) {
+
+				System.out.println( rp.getBytes()[i] + " = " + (char)i);
+			}
 		}
 	}
 	catch( Exception e) {

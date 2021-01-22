@@ -7,36 +7,66 @@ public class Keylistener implements KeyListener {
 
         this.initRI();
     }
+    boolean w = false;
+    boolean a = false;
+    boolean s = false;
+    boolean d = false; 
+
     public void keyPressed( KeyEvent e) {
 
         char pressed = e.getKeyChar();
 
-        if(pressed == 'w' || pressed == 'W') {
+        if((pressed == 'w' || pressed == 'W') && !w) {
 
-            ri.fwdPressed();
+            w = true;
+           ri.fwdPressed();
         }
-        if(pressed  == 's' || pressed == 'S') {
+        if((pressed  == 's' || pressed == 'S') && !s) {
 
+            s = true;
             ri.backPressed();   
         }
-        if(pressed == 'a' || pressed == 'A') {
+        if((pressed == 'a' || pressed == 'A') && !a) {
 
+            a = true;
             ri.leftPressed();
         }
-        if(pressed == 'd' || pressed == 'D') {
+        if((pressed == 'd' || pressed == 'D') && !d) {
 
+            d = true;
             ri.rightPressed();
         }
     }
 
     public void keyTyped( KeyEvent e) {
 
-
+            
     }
 
     public void keyReleased( KeyEvent e) {
 
+        char pressed = e.getKeyChar();
 
+        if(pressed == 'w' || pressed == 'W') {
+
+            w = false;
+           ri.fwdReleased();
+        }
+        if(pressed  == 's' || pressed == 'S') {
+
+            s = false;
+            ri.backReleased();   
+        }
+        if(pressed == 'a' || pressed == 'A') {
+
+            a = false;
+            ri.leftReleased();
+        }
+        if(pressed == 'd' || pressed == 'D') {
+
+            d = false;
+            ri.rightReleased();
+        }
     }
 
     
